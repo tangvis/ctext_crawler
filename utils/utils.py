@@ -16,7 +16,7 @@ def read_link(url):
     session = requests.Session()
     resp = session.get(read_link_url + url)
     if not resp.ok:
-        print('get %s link failed, response error')
+        print('get %s link failed, response error' % (url, ))
         return None, 1
     json_content = json.loads(resp.content)
     if 'urn' not in json_content:
